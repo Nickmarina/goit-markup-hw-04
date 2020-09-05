@@ -1,7 +1,7 @@
 :root{
     --header-color: #212121;
     --paragraph-color: #757575;
-
+    --background: #F5F4FA;
     --sections-background: #2F303A;
     --selection-color: #2196F3;
     --white-color: #ffffff;
@@ -128,10 +128,37 @@ ul a{
     color: var(--paragraph-color);
 }
 
-.contact-list a:hover,
-.contact-list a:focus{
+.contact-list .link:hover,
+.contact-list .link:focus{
     color: var(--selection-color);
 }
+
+/* .contact-list .icon{
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    /* background-color: coral; */
+    background-repeat: no-repeat;
+    background-size: contain; */
+}
+
+/* .contact-list .item::before{
+    content: " ";
+    height: 16px; 
+    width:12px;   
+    text-align: center;
+}
+
+.contact-list .mail::before{
+    content: url("../images/icons/mail.svg");
+    margin-right: 10px;
+}
+
+.contact-list .phone::before{
+    content: url("../images/icons/phone.svg");
+    margin-right: 10px;
+} */
+
 
 /*  заголовки страницы */
 .content-title{
@@ -190,8 +217,23 @@ ul a{
     display: flex;
 }
 
-.advantages-list .item + .item {
-    margin-left: 30px;
+.advantages-list .item{
+   width: calc((100% - 90px)/4);
+   margin-right: 30px;
+}
+
+.advantages-list .item:last-child{
+    margin-right: 0;
+}
+
+.advantages-list .icon{
+    /* display: flex; */
+    width: 270px;
+    height: 120px;
+    padding-top:25px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    background-color: var(--background);
 }
 
 .advantages-list h2{
@@ -216,42 +258,47 @@ ul a{
 
 .features-list{
     display: flex;
-    width: 270px;
 }
 
 .features-list .item{
-    width: 370px;
+    width: calc((100%-60px)/3);
+    margin-right: 30px;
+}
+
+.features-list .item:last-child{
+    margin-right: 0;
 }
 
 .features-list img{
-    width: inherit;
+    widows: 370px;
     padding: 0;
     margin: 0;
-}
-
-.features-list .item:not(:last-child){
-    margin-right: 30px;
 }
 
 /* секция о команде */
 
 .command-section{
-    background-color: #F5F4FA;
+    background-color: var(--background);
 }
 .command-list{
     display: flex;
 }
 
 .command-list .item{
-    width: 270px;
-    margin-bottom: 94px;
-}
-.command-list .item:not(:last-child){
+    width: calc((100% - 90px) /4);
     margin-right: 30px;
+    margin-bottom: 94px;
+    background-color: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.command-list .item:last-child){
+    margin-right: 0;
 }
 
 .command-list img{
-    width: inherit;
+    width: 270px;
     padding: 0;
     margin: 0;
     margin-bottom: 30px;
@@ -265,7 +312,7 @@ ul a{
     letter-spacing: 0.03em;
 }
 .command-list p{
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     color:var(--paragraph-color);
     font-size: 16px;
     font-weight: 400;
@@ -274,7 +321,68 @@ ul a{
     letter-spacing: 0.03em;
 }
 
+.command-social-list{
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+.command-social-list li{
+    width: 44px;
+    margin-right: 10px; 
+    padding: 0;
+}
+
+.command-social-list li:last-child{
+    margin-right: 0;
+}
+    
+.command-social-list .icon{
+    width: 44px;
+    height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50%;
+}
+
+.command-social-list .icon:hover, 
+.command-social-list .icon:focus{
+    --color1: var(--white-color);
+    background-color: var(--selection-color);
+    border:1px;
+    border-radius: 50%;   
+}
+
 /* секция клиентов */
+
+.client-list{
+    display:flex;
+}
+
+.client-list .item{
+    width: calc((100% - 150px)/6);
+    margin-right: 30px;
+    margin-bottom: 94px;
+    border: 1px solid #AFB1B8;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.client-list:last-child{
+    margin-right: 0;
+}
+
+.client-list .icon{
+    width: 170px;
+    height: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ 
+}
+
+.client-list .icon:hover,
+.client-list .icon:focus{
+    --color1: var(--selection-color);
+}
 
 
 /* футер */
@@ -326,9 +434,35 @@ address .item{
     letter-spacing: 0.03em;
     text-transform: uppercase;
 }
- 
 
+.links-list{
+    display:flex;
+}
 
+.links-list .item{
+    width: 44px;
+    margin-right: 10px;
+}
+.links-list .item:last-child{
+    margin-right: 0;
+}
+
+.links-list .icon{
+    width: 44px;
+    height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;   
+}
+
+.links-list .icon:hover, 
+.links-list .icon:focus{
+    --color1: var(--white-color);
+    background-color: var(--selection-color);
+    border:1px;
+    border-radius: 50%;   
+}
 
 /* PORTFOLIO */
 
@@ -348,7 +482,7 @@ address .item{
 .projects button{
     padding: 6px 22px;
     margin-right: 30px;
-    background: #F5F4FA;
+    background: var(--background);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.6;
@@ -368,13 +502,15 @@ address .item{
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-}
+    }
 
 .projects-list .item{    
-    width: calc((100%-60px)/3);
+    width: calc((100% - 2*30px) /3);
+    margin-right: 30px;
     margin-bottom: 30px;
-    /* width: 370px; */
-    /* margin-right: 30px; */
+    background-color: var(--white-color);
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
 }
 
 .projects-list .item:nth-child(3n){
@@ -385,15 +521,21 @@ address .item{
     margin-bottom: 0;
 }
 
+.projects-list .item:hover,
+.projects-list .item:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .projects-list img{
     padding: 0;
     margin: 0;
+    width: 370px;
     margin-bottom: 20px;
 }
 
 .projects-list h2{
-    margin-right: 24px;
     margin-left: 24px;
+    margin-right: 24px;
     margin-bottom: 4px;
     font-weight: 700;
     font-size: 18px;
@@ -402,8 +544,8 @@ address .item{
 }
 
 .projects-list p{
-    margin-right: 24px;
     margin-left: 24px;
+    margin-right: 24px;
     margin-bottom: 20px;
     color: var(--paragraph-color);
     font-weight: 400;
