@@ -121,11 +121,11 @@ ul a{
 }
 
 .contact-list .item:not(:last-child){
-    display: inline-block;
     margin-right: 50px;
-} 
+}
 
 .contact-list a{
+    display: inline-flex;
     color: var(--paragraph-color);
 }
 
@@ -135,17 +135,12 @@ ul a{
     --color4: var(--selection-color);
 }
 
-.contact-list .mail-icon{
+.contact-list .icon{
+    align-items: center;
     width: 16px;
     height: 16px;
     margin-right: 10px;
   }
-
-.contact-list .phone-icon{
-    width: 16px;
-    height: 18px;
-    margin-right: 10px;
-}
 
  /* ИКОНКИ В HEADER ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ */
  /* .contact-list .mail::before{
