@@ -128,8 +128,13 @@ ul a{
     color: var(--paragraph-color);
 }
 
-.contact-list .mail::before{
-    /* outline: 2px solid violet; */
+.contact-list a:hover,
+.contact-list a:focus{
+    color: var(--selection-color);
+}
+
+ /* ИКОНКИ В HEADER ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ */
+ .contact-list .mail::before{
     display: inline-block;
     content: "";
     width: 16px;
@@ -140,7 +145,6 @@ ul a{
 }
 
 .contact-list .phone::before{
-    /* outline: 2px solid violet; */
     display: inline-block;
     content: "";
     width: 10px;
@@ -149,12 +153,8 @@ ul a{
     background-image: url(../images/icons/phone.svg);
     background-repeat: no-repeat;
     background-size: contain;
-}
+} 
 
-.contact-list a:hover,
-.contact-list a:focus{
-    color: var(--selection-color);
-}
  
 /* hero */
 .overlay{
@@ -192,7 +192,7 @@ ul a{
     border-radius: 4px;
 }
 
-/*  заголовки страницы */
+/*   заголовки страницы */ 
 .content-title{
     padding-top: 94px;
     margin-bottom: 50px;
